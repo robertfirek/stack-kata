@@ -1,18 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Stack {
-    private Object pushed;
+    private List<Object> pushed = new ArrayList<>();
 
     public Object pop() {
         if (this.isEmpty()) {
             throw new IllegalArgumentException("you can not pop an empty stack");
         }
-        return pushed;
+        return pushed.remove(pushed.size()-1);
     }
 
     private boolean isEmpty() {
-        return pushed == null;
+        return pushed.isEmpty();
     }
 
     public void push(Object pushed) {
-        this.pushed = pushed;
+        this.pushed.add(pushed);
     }
 }

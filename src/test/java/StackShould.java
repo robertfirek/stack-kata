@@ -37,4 +37,19 @@ public class StackShould {
 
         assertThat(popped, is(pushed));
     }
+
+    @Test
+    public void
+    pop_objects_in_reverse_push_order() {
+        Object pushedFirst = "pushedFirst";
+        Object pushedSecond = "pushedSecond";
+        stack.push(pushedFirst);
+        stack.push(pushedSecond);
+
+        Object poppedFirst = stack.pop();
+        Object poppedSecond = stack.pop();
+
+        assertThat(poppedFirst, is(pushedSecond));
+        assertThat(poppedSecond, is(pushedFirst));
+    }
 }
