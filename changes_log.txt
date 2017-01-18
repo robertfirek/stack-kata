@@ -1,2 +1,3 @@
 My branch file. Exists only on branch.
 Change no 1
+Change no 2
